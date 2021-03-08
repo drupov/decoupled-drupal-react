@@ -2,6 +2,7 @@ name: 'Players demo'
 type: module
 description: 'A demo module - create a GraphQL schema for players data from a custom content type.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Custom
 dependencies:
   - 'graphql:graphql'
