@@ -6,7 +6,7 @@ The backend (Drupal 9) runs on a [lando](https://docs.lando.dev/config/drupal9.h
 
 Run the following command to start the lando environment:
 ```
-# Execute in /backend
+# Execute in root
 lando start
 ```
 You should now be able to connect to the container on
@@ -27,13 +27,14 @@ lando composer install
 Install Drupal with the predefined configuration:
 ```
 # Execute in /backend
-lando drush si --db-url=mysql://drupal9:drupal9@database/drupal9 --account-pass=admin --yes
+lando drush si minimal --db-url=mysql://drupal9:drupal9@database/drupal9 --account-pass=admin --existing-config --yes
 ```
 You should now be able to see a fully installed Drupal 9 at
 [https://decoupled-drupal-react.lndo.site](https://decoupled-drupal-react.lndo.site).
 
 Import all configuration
 ```
+# Execute in /backend
 lando drush cim -y
 ```
 
