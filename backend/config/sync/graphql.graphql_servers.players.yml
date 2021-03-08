@@ -1,0 +1,13 @@
+uuid: 91990d4f-9bbb-4b0e-b98b-aee6ec05aacd
+langcode: en
+status: true
+dependencies: {  }
+name: players
+label: Players
+schema: players
+schema_configuration: {  }
+persisted_queries_settings: {  }
+endpoint: /graphql
+debug_flag: 15
+caching: false
+batching: true
