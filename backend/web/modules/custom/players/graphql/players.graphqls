@@ -1,0 +1,32 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  player(id: Int!): Player
+  players(
+    offset: Int = 0
+    limit: Int = 10
+  ): PlayerConnection!
+}
+
+type Player {
+  id: Int!
+  first_name: String!
+  last_name: String!
+}
+
+type PlayerConnection {
+  total: Int!
+  items: [Player!]
+}
+
+type Mutation {
+  createPlayer(data: PlayerInput): Player
+}
+
+input PlayerInput {
+  first_name: String!
+  last_name: String!
+}
