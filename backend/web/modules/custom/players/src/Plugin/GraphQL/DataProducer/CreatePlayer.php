@@ -69,7 +69,7 @@ class CreatePlayer extends DataProducerPluginBase implements ContainerFactoryPlu
    * @param array $data
    *   The title of the job.
    *
-   * @return \Drupal\node\NodeInterface
+   * @return \Drupal\Core\Entity\EntityInterface
    *   The newly created player.
    *
    * @throws \Exception
