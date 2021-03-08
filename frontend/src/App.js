@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Overview from './components/Overview';
 import Player from './components/Player';
 import PlayerContext from './context/PlayerContext';
-import ApolloClient from "apollo-boost";
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
-  uri: 'https://apollo-react-hooks-drupal-graphql.lndo.site/graphql'
+  uri: 'https://decoupled-drupal-react.lndo.site/graphql'
 });
 
 const App = () => {

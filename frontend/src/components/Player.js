@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PlayerContext from '../context/PlayerContext';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from 'react-apollo';
 import { PLAYER } from '../gql/common';
 
 const Player = () => {
@@ -21,7 +21,7 @@ const Player = () => {
         <p>Loading...</p>
         :
         <React.Fragment>
-          <p>First name: {data.player.first_name}</p>
+          <p>First name: {data.player.firstName}</p>
           <button onClick={() => context.setActivePlayerId(0)}>Return to players list</button>
         </React.Fragment>
       }

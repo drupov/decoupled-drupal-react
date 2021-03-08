@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from 'react-apollo';
 import { CREATE_PLAYER, PLAYERS } from '../gql/common';
 
 const CreatePlayer = () => {
@@ -12,8 +12,8 @@ const CreatePlayer = () => {
       <form
         onSubmit={event => {
           event.preventDefault();
-          const firstName = event.target.first_name.value;
-          const lastName = event.target.last_name.value;
+          const firstName = event.target.firstName.value;
+          const lastName = event.target.lastName.value;
 
           if (!firstName || !lastName) {
             alert('First or last name must be filled out.');
@@ -21,21 +21,21 @@ const CreatePlayer = () => {
           }
 
           createPlayer({
-            variables: {first_name: firstName, last_name: lastName},
+            variables: {firstName: firstName, lastName: lastName},
             refetchQueries: [{ query: PLAYERS }]
           }).then((res) => {
             console.log(`Player with id ${res.data.createPlayer.id} added successfully.`);
           });
 
-          event.target.first_name.value = '';
-          event.target.last_name.value = '';
+          event.target.firstName.value = '';
+          event.target.lastName.value = '';
         }}
       >
-        <label htmlFor="first_name">First name</label>
-        <input type="text" name="first_name" />
+        <label htmlFor="firstName">First name</label>
+        <input type="text" name="firstName" />
         <br />
-        <label htmlFor="last_name">Last name</label>
-        <input type="text" name="last_name" />
+        <label htmlFor="lastName">Last name</label>
+        <input type="text" name="lastName" />
         <br />
         <button type="submit">Create player</button>
       </form>

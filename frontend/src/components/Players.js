@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PlayerContext from '../context/PlayerContext';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from 'react-apollo';
 import { PLAYERS } from '../gql/common';
 
 const Players = () => {
@@ -21,7 +21,7 @@ const Players = () => {
         :
         data.players.items.map((item) => (
           <button key={item.id} onClick={() => context.setActivePlayerId(item.id)}>
-            {item.first_name} {item.last_name} ({item.id})
+            {item.firstName} {item.lastName} ({item.id})
           </button>
         ))
       }
