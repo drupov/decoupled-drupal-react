@@ -1,0 +1,35 @@
+name: drupal-decoupled
+recipe: drupal9
+config:
+  via: nginx
+  webroot: backend/web
+  xdebug: true
+services:
+  appserver:
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: 'serverName=appserver'
+    config:
+      php: php.ini
+  node:
+    type: node
+    overrides:
+      ports:
+        - 3000:3000
+    globals:
+      gulp-cli: latest
+tooling:
+  drush:
+    service: appserver
+    cmd: drush --root=/app/web
+  drupal:
+    service: appserver
+    cmd: drupal --root=/app/web
+  npm:
+    service: node
+  node:
+    service: node
+  yarn:
+    service: node
+  gulp:
+    service: node
