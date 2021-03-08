@@ -5,8 +5,8 @@ namespace Drupal\players\Plugin\GraphQL\DataProducer;
 use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\players\Wrappers\PlayerConnection;
 use Drupal\graphql\Plugin\GraphQL\DataProducer\DataProducerPluginBase;
+use Drupal\players\Wrappers\PlayerConnection;
 use GraphQL\Error\UserError;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -37,7 +37,7 @@ class QueryPlayers extends DataProducerPluginBase implements ContainerFactoryPlu
   /**
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityManager;
+  protected $entityTypeManager;
 
   /**
    * {@inheritdoc}
@@ -47,7 +47,7 @@ class QueryPlayers extends DataProducerPluginBase implements ContainerFactoryPlu
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity.manager')
+      $container->get('entity_type.manager')
     );
   }
 
@@ -58,10 +58,10 @@ class QueryPlayers extends DataProducerPluginBase implements ContainerFactoryPlu
     array $configuration,
     $pluginId,
     $pluginDefinition,
-    EntityTypeManagerInterface $entityManager
+    EntityTypeManagerInterface $entityTypeManager
   ) {
     parent::__construct($configuration, $pluginId, $pluginDefinition);
-    $this->entityManager = $entityManager;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -78,7 +78,7 @@ class QueryPlayers extends DataProducerPluginBase implements ContainerFactoryPlu
       throw new UserError(sprintf('Exceeded maximum query limit: %s.', static::MAX_LIMIT));
     }
 
-    $storage = $this->entityManager->getStorage('node');
+    $storage = $this->entityTypeManager->getStorage('node');
     $type = $storage->getEntityType();
     $query = $storage->getQuery()
       ->currentRevision()
