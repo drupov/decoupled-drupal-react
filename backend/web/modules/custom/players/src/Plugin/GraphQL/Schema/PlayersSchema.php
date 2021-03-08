@@ -73,14 +73,14 @@ class PlayersSchema extends SdlSchemaPluginBase {
         ->map('entity', $builder->fromParent())
     );
 
-    $registry->addFieldResolver('Player', 'first_name',
+    $registry->addFieldResolver('Player', 'firstName',
       $builder->produce('property_path')
         ->map('type', $builder->fromValue('entity:node'))
         ->map('value', $builder->fromParent())
         ->map('path', $builder->fromValue('field_first_name.value'))
     );
 
-    $registry->addFieldResolver('Player', 'last_name',
+    $registry->addFieldResolver('Player', 'lastName',
       $builder->produce('property_path')
         ->map('type', $builder->fromValue('entity:node'))
         ->map('value', $builder->fromParent())

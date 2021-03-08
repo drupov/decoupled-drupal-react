@@ -13,8 +13,8 @@ type Query {
 
 type Player {
   id: Int!
-  first_name: String!
-  last_name: String!
+  firstName: String!
+  lastName: String!
 }
 
 type PlayerConnection {
@@ -27,6 +27,6 @@ type Mutation {
 }
 
 input PlayerInput {
-  first_name: String!
-  last_name: String!
+  firstName: String!
+  lastName: String!
 }

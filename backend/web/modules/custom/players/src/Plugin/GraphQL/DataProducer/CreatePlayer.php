@@ -76,8 +76,8 @@ class CreatePlayer extends DataProducerPluginBase implements ContainerFactoryPlu
    */
   public function resolve(array $data) {
     if ($this->currentUser->hasPermission('create player content')) {
-      $first_name = $data['first_name'];
-      $last_name = $data['last_name'];
+      $first_name = $data['firstName'];
+      $last_name = $data['lastName'];
 
       $values = [
         'type' => 'player',
