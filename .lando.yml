@@ -12,7 +12,7 @@ services:
     config:
       php: php.ini
   node:
-    type: node
+    type: node:14
     overrides:
       ports:
         - 3000:3000
@@ -25,9 +25,11 @@ tooling:
   drupal:
     service: appserver
     cmd: /app/backend/vendor/bin/drupal --root=/app/backend/web
+  node:
+    service: node
   npm:
     service: node
-  node:
+  npx:
     service: node
   yarn:
     service: node
