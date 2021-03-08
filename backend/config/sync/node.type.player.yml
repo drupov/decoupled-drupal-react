@@ -1,0 +1,19 @@
+uuid: be4d78b7-e990-4166-83cd-b1ce0557aa45
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: grVKkzAPbWeWD-VBY-cr5QDBhwE-h5_wxqs_yUjIges
+name: Player
+type: player
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

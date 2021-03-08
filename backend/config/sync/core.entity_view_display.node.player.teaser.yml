@@ -1,0 +1,26 @@
+uuid: 0c2bd13d-a104-4e75-8ac6-a6d4fe10bc8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.player.field_first_name
+    - field.field.node.player.field_last_name
+    - node.type.player
+  module:
+    - user
+_core:
+  default_config_hash: TX8TwDG3XiVNBH8kMziu3OJaPL39gnHmBxxtuZZle9M
+id: node.player.teaser
+targetEntityType: node
+bundle: player
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_first_name: true
+  field_last_name: true

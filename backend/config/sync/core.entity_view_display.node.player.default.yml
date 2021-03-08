@@ -1,0 +1,39 @@
+uuid: cd663237-e9b6-4b6d-a570-4e5659f5e0b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.player.field_first_name
+    - field.field.node.player.field_last_name
+    - node.type.player
+  module:
+    - user
+_core:
+  default_config_hash: yb8JYrNf6WogPb8SyNHKl8RwW6bq-dQbO6StFvIbGa8
+id: node.player.default
+targetEntityType: node
+bundle: player
+mode: default
+content:
+  field_first_name:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_last_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

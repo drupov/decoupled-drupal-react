@@ -1,0 +1,21 @@
+uuid: edfdea70-8485-46e3-90c2-4fa289f1ec94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.player
+_core:
+  default_config_hash: shXLpL7olOkd5WtlO7OHBp50dC9sdULQFTfFq9Vnhn4
+id: node.player.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: player
+label: 'First name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

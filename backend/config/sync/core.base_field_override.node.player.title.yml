@@ -1,0 +1,20 @@
+uuid: 30c65bcd-d525-4d42-b30e-08a082454bd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.player
+_core:
+  default_config_hash: g7x2mjH2YxvNN6Swxx4uKIz8nmr2sQvBmrrjEEvACKI
+id: node.player.title
+field_name: title
+entity_type: node
+bundle: player
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
