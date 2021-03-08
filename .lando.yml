@@ -1,4 +1,4 @@
-name: drupal-decoupled
+name: decoupled-drupal-react
 recipe: drupal9
 config:
   via: nginx
@@ -21,10 +21,10 @@ services:
 tooling:
   drush:
     service: appserver
-    cmd: drush --root=/app/web
+    cmd: /app/backend/vendor/bin/drush --root=/app/backend/web
   drupal:
     service: appserver
-    cmd: drupal --root=/app/web
+    cmd: /app/backend/vendor/bin/drupal --root=/app/backend/web
   npm:
     service: node
   node:
