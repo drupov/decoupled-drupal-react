@@ -12,5 +12,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'create player content'
+  - 'execute players arbitrary graphql requests'
   - 'search content'
   - 'use text format restricted_html'
