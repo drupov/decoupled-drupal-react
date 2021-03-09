@@ -7,15 +7,15 @@ use GraphQL\Server\OperationParams;
 
 /**
  * @PersistedQuery(
- *   id = "persisted_query_player",
- *   label = "Persisted Query Player",
- *   description = "Persisted query plugin for player query"
+ *   id = "persisted_query_create_player",
+ *   label = "Persisted Query Create Player",
+ *   description = "Persisted query plugin for create player mutation"
  * )
  *
- * Class PersistedQueryPlayer
+ * Class PersistedQueryCreatePlayer
  * @package Drupal\players\Plugin\GraphQL\PersistedQuery
  */
-class PersistedQueryPlayer extends PersistedQueryPluginBase {
+class PersistedQueryCreatePlayer extends PersistedQueryPluginBase {
 
   /**
    * {@inheritdoc}
@@ -30,7 +30,7 @@ class PersistedQueryPlayer extends PersistedQueryPluginBase {
    */
   protected function queryMap() {
     return [
-      'e026669bbe11864c85ad3174e9bc2291ef9e5938d28c5d0e1723cb1d20a47ca9' => 'query Player ($id: Int!) { player(id: $id) { firstName lastName } }',
+      'd6d8dcb3dada161a2b180b516712e66a6ef63094d39a9037c9dabdda69c3d33e' => 'mutation CreatePlayer ($firstName: String!, $lastName: String!) { createPlayer (data: {firstName: $firstName, lastName: $lastName}) { id } }',
     ];
   }
 
