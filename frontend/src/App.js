@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import Overview from './components/Overview';
 import Player from './components/Player';
 import PlayerContext from './context/PlayerContext';
-import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { HttpLink, InMemoryCache, ApolloClient } from "@apollo/client";
+import { createPersistedQueryLink } from "@apollo/client/link/persisted-queries";
+import { sha256 } from 'crypto-hash';
+
+const httpLink = new HttpLink({ uri: 'https://decoupled-drupal-react.lndo.site/graphql' });
+const persistedQueriesLink = createPersistedQueryLink({ sha256 });
 
 const client = new ApolloClient({
-  uri: 'https://decoupled-drupal-react.lndo.site/graphql'
+  cache: new InMemoryCache(),
+  link: persistedQueriesLink.concat(httpLink)
 });
 
 const App = () => {
