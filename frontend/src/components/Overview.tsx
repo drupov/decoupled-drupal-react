@@ -1,5 +1,5 @@
-import Players from './Players';
-import CreatePlayer from './CreatePlayer';
+import Players from './Players'
+import CreatePlayer from './CreatePlayer'
 
 const Overview = () => {
   return (
@@ -7,7 +7,7 @@ const Overview = () => {
       <Players />
       <CreatePlayer />
     </>
-  );
+  )
 }
 
-export default Overview;
+export default Overview

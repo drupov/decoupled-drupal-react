@@ -1,14 +1,14 @@
-import {useContext} from 'react';
-import PlayerContext from '../context/PlayerContext';
-import {useQuery} from 'react-apollo';
-import {PLAYERS} from '../gql/common';
+import {useContext} from 'react'
+import PlayerContext from '../context/PlayerContext'
+import {useQuery} from 'react-apollo'
+import {PLAYERS} from '../gql/common'
 
 const Players: any = () => {
-  const context: any = useContext(PlayerContext);
-  const {data, loading, error} = useQuery(PLAYERS);
+  const context: any = useContext(PlayerContext)
+  const {data, loading, error} = useQuery(PLAYERS)
   
   if (error) {
-    return error.message;
+    return error.message
   }
 
   return (
@@ -22,7 +22,7 @@ const Players: any = () => {
         ))
       }
     </>
-  );
+  )
 }
 
-export default Players;
+export default Players

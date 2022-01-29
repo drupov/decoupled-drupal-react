@@ -1,8 +1,8 @@
-import {useMutation} from 'react-apollo';
-import {CREATE_PLAYER, PLAYERS} from '../gql/common';
+import {useMutation} from 'react-apollo'
+import {CREATE_PLAYER, PLAYERS} from '../gql/common'
 
 const CreatePlayer = () => {
-  const [createPlayer, {loading}] = useMutation(CREATE_PLAYER);
+  const [createPlayer, {loading}] = useMutation(CREATE_PLAYER)
 
   return (
     <>
@@ -10,24 +10,24 @@ const CreatePlayer = () => {
       {loading ? <p>Saving player...</p> : ''}
       <form
         onSubmit={(event: any) => {
-          event.preventDefault();
-          const firstName = event.target.firstName.value;
-          const lastName = event.target.lastName.value;
+          event.preventDefault()
+          const firstName = event.target.firstName.value
+          const lastName = event.target.lastName.value
 
           if (!firstName || !lastName) {
-            alert('First or last name must be filled out.');
-            return;
+            alert('First or last name must be filled out.')
+            return
           }
 
           createPlayer({
             variables: {firstName: firstName, lastName: lastName},
             refetchQueries: [{query: PLAYERS}]
           }).then((res) => {
-            console.log(`Player with id ${res.data.createPlayer.id} added successfully.`);
-          });
+            console.log(`Player with id ${res.data.createPlayer.id} added successfully.`)
+          })
 
-          event.target.firstName.value = '';
-          event.target.lastName.value = '';
+          event.target.firstName.value = ''
+          event.target.lastName.value = ''
         }}
       >
         <label htmlFor="firstName">First name</label>
@@ -39,7 +39,7 @@ const CreatePlayer = () => {
         <button type="submit">Create player</button>
       </form>
     </>
-  );
+  )
 }
 
-export default CreatePlayer;
+export default CreatePlayer
