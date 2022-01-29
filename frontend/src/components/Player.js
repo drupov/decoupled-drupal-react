@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import PlayerContext from '../context/PlayerContext';
-import { useQuery } from 'react-apollo';
-import { PLAYER } from '../gql/common';
+import {useQuery} from 'react-apollo';
+import {PLAYER} from '../gql/common';
 
 const Player = () => {
   const context = useContext(PlayerContext);
 
-  const { data, loading, error } = useQuery(PLAYER, {variables: {id: context.activePlayerId}});
+  const {data, loading, error} = useQuery(PLAYER, {variables: {id: context.activePlayerId}});
 
   if (error) {
     return error.message;

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useMutation } from 'react-apollo';
-import { CREATE_PLAYER, PLAYERS } from '../gql/common';
+import {useMutation} from 'react-apollo';
+import {CREATE_PLAYER, PLAYERS} from '../gql/common';
 
 const CreatePlayer = () => {
-  const [createPlayer, { loading }] = useMutation(CREATE_PLAYER);
+  const [createPlayer, {loading}] = useMutation(CREATE_PLAYER);
 
   return (
     <React.Fragment>
