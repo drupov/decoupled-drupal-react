@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import {useState} from 'react';
 import Overview from './components/Overview';
 import Player from './components/Player';
 import PlayerContext from './context/PlayerContext';
-import { ApolloProvider } from 'react-apollo';
-import { HttpLink, InMemoryCache, ApolloClient } from "@apollo/client";
-import { createPersistedQueryLink } from "@apollo/client/link/persisted-queries";
-import { sha256 } from 'crypto-hash';
+import {ApolloProvider} from 'react-apollo';
+import {HttpLink, InMemoryCache, ApolloClient} from "@apollo/client";
+import {createPersistedQueryLink} from "@apollo/client/link/persisted-queries";
+import {sha256} from 'crypto-hash';
 
 const httpLink = new HttpLink({ uri: 'https://decoupled-drupal-react.lndo.site/graphql' });
 const persistedQueriesLink = createPersistedQueryLink({ sha256 });
 
-const client = new ApolloClient({
+const client: any = new ApolloClient({
   cache: new InMemoryCache(),
   link: persistedQueriesLink.concat(httpLink)
 });
@@ -20,12 +20,10 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <PlayerContext.Provider value={
-        {
-          activePlayerId: activePlayerId,
-          setActivePlayerId: setActivePlayerId
-        }
-      }>
+      <PlayerContext.Provider value={{
+        activePlayerId: activePlayerId,
+        setActivePlayerId: setActivePlayerId
+      }}>
         {activePlayerId ? <Player /> : <Overview /> }
       </PlayerContext.Provider>
     </ApolloProvider>
