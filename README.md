@@ -4,7 +4,7 @@ A demo for decoupling Drupal with React (using Typescript template). Drupal deli
 
 ## Lando
 
-The backend (Drupal 9) runs on a [lando](https://docs.lando.dev/config/drupal9.html) environment with PHP 7.4.
+The backend (Drupal 9) runs on a [Lando](https://docs.lando.dev/config/drupal9.html) environment with PHP 8.1.
 
 Run the following command to start the lando environment:
 
