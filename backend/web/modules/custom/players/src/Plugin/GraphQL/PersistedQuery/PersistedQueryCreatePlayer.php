@@ -30,7 +30,7 @@ class PersistedQueryCreatePlayer extends PersistedQueryPluginBase {
    */
   protected function queryMap() {
     return [
-      'd6d8dcb3dada161a2b180b516712e66a6ef63094d39a9037c9dabdda69c3d33e' => 'mutation CreatePlayer ($firstName: String!, $lastName: String!) { createPlayer (data: {firstName: $firstName, lastName: $lastName}) { id } }',
+      '5a415b50ee35ed6168a06330a1dceb635d55b3453aad77c8b8b54c645070f8d3' => 'mutation CreatePlayer ($firstName: String!, $lastName: String!) { createPlayer (data: {firstName: $firstName, lastName: $lastName}) { id } }',
     ];
   }
 

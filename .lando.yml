@@ -12,7 +12,7 @@ services:
     config:
       php: php.ini
   node:
-    type: node:14
+    type: node:16
     overrides:
       ports:
         - 3000:3000

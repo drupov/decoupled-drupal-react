@@ -4,7 +4,11 @@ status: true
 dependencies: {  }
 name: players
 label: Players
+endpoint: /graphql
+debug_flag: 15
 schema: players
+caching: false
+batching: true
 schema_configuration: {  }
 persisted_queries_settings:
   persisted_query_create_player:
@@ -13,7 +17,3 @@ persisted_queries_settings:
     weight: -50
   persisted_query_players:
     weight: -49
-endpoint: /graphql
-debug_flag: 15
-caching: false
-batching: true

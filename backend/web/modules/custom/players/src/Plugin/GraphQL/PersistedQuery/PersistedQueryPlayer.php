@@ -30,7 +30,7 @@ class PersistedQueryPlayer extends PersistedQueryPluginBase {
    */
   protected function queryMap() {
     return [
-      'e026669bbe11864c85ad3174e9bc2291ef9e5938d28c5d0e1723cb1d20a47ca9' => 'query Player ($id: Int!) { player(id: $id) { firstName lastName } }',
+      '8a2e105247121daa50c04672d60890dab1137106377e8901b907f6be671275e2' => 'query Player ($id: Int!) { player(id: $id) { firstName lastName } }',
     ];
   }
 
