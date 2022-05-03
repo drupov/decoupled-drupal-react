@@ -1,6 +1,6 @@
 import {useContext} from 'react'
 import PlayerContext from '../context/PlayerContext'
-import {useQuery} from 'react-apollo'
+import {useQuery} from '@apollo/client'
 import {PLAYERS} from '../gql/common'
 
 const Players: any = () => {

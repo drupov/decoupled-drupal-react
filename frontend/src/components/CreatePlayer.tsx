@@ -1,4 +1,4 @@
-import {useMutation} from 'react-apollo'
+import {useMutation} from '@apollo/client'
 import {CREATE_PLAYER, PLAYERS} from '../gql/common'
 
 const CreatePlayer = () => {

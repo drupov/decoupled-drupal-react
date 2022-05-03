@@ -9,6 +9,9 @@ debug_flag: 15
 schema: players
 caching: false
 batching: true
+disable_introspection: false
+query_depth: null
+query_complexity: null
 schema_configuration: {  }
 persisted_queries_settings:
   persisted_query_create_player:
