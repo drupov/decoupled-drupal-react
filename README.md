@@ -13,8 +13,7 @@ Run the following command to start the lando environment:
 lando start
 ```
 
-You should now be able to connect to the container on
-https://decoupled-drupal-react.lndo.site.
+You should now be able to connect to the container on https://decoupled-drupal-react.lndo.site.
 
 If you're starting from scratch there will be a "File not found"-error, as the backend is not installed yet (see next
 section).
@@ -30,14 +29,14 @@ Run following commands to get files needed for your Drupal installation:
 # Execute in /backend
 lando composer install
 ```
+
 Install Drupal with the predefined configuration:
 ```
 # Execute in /backend
 lando drush si minimal --db-url=mysql://drupal9:drupal9@database/drupal9 --account-pass=admin --existing-config --yes
 ```
 
-You should now be able to see an installed Drupal 9 at
-https://decoupled-drupal-react.lndo.site.
+You should now be able to see an installed Drupal 9 at https://decoupled-drupal-react.lndo.site.
 
 ## Installation instructions - frontend
 
