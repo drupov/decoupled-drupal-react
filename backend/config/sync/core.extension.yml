@@ -56,6 +56,5 @@ module:
   views: 10
   minimal: 1000
 theme:
-  bartik: 0
   claro: 0
 profile: minimal
