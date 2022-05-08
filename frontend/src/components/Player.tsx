@@ -8,18 +8,13 @@ const Player: any = () => {
   const {data, loading, error} = useQuery(PLAYER, {variables: {id: context.activePlayerId}})
 
   if (error) {
-    return error.message
-  }
-
-  if (!data) {
-    return
+    return <p>{error.message}</p>
   }
 
   return (
     <>
       <h1>Player data</h1>
-      {
-        loading ? <p>Loading...</p> :
+      {loading ? <p>Loading...</p> :
         <>
           <p>First name: {data.player.firstName}</p>
           <button onClick={() => context.setActivePlayerId(0)}>Return to players list</button>
