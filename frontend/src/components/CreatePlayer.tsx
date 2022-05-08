@@ -6,7 +6,7 @@ const CreatePlayer = () => {
 
   return (
     <>
-      <h1>Create new player</h1>
+      <h2>Create new player</h2>
       {loading ? <p>Saving player...</p> : ''}
       <form
         onSubmit={(event: any) => {
