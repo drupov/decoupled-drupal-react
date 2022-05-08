@@ -27,4 +27,4 @@
 /.gitattributes
 
 # Ignore simple_oauth keys
-/keys/*
+/keys/*.key
