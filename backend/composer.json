@@ -25,6 +25,7 @@
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-recommended": "^9.3",
         "drupal/graphql": "^4.2",
+        "drupal/simple_oauth": "^5.2",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
