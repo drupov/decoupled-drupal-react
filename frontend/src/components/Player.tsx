@@ -11,6 +11,10 @@ const Player: any = () => {
     return error.message
   }
 
+  if (!data) {
+    return
+  }
+
   return (
     <>
       <h1>Player data</h1>
