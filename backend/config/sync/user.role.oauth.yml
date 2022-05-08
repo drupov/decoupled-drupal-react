@@ -1,0 +1,10 @@
+uuid: 9eddaf08-877d-460e-8372-0620d7e5945d
+langcode: en
+status: true
+dependencies: {  }
+id: oauth
+label: OAuth
+weight: -7
+is_admin: null
+permissions:
+  - 'access user profiles'
