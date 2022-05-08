@@ -12,15 +12,17 @@ const Login = () => {
   const client = useApolloClient()
 
   if (!isAuthenticated) {
-    const username = 'editor'
-    const password = 'editor'
-    const client_id = '133d13b8-8c86-4a98-9c4e-b18fbe5e5f54'
-    const client_secret = 'oauth'
-    const grant_type = 'password'
-    const scope = 'oauth' // Drupal role that's set in oauth
+    const client_id = process.env.REACT_APP_OAUTH_CLIENT_ID ?? ''
+    const client_secret = process.env.REACT_APP_OAUTH_CLIENT_SECRET ?? ''
+    const grant_type = process.env.REACT_APP_OAUTH_GRANT_TYPE ?? ''
+    const scope = process.env.REACT_APP_OAUTH_SCOPE ?? ''
 
     return (
-      <button onClick={() =>
+      <form onSubmit={(event: any) => {
+        event.preventDefault()
+        const username = event.target.username.value
+        const password = event.target.password.value
+
         login({
           username,
           password,
@@ -28,8 +30,16 @@ const Login = () => {
           client_secret,
           grant_type,
           scope
-        })}>Login
-      </button>
+        })
+      }}>
+        <label htmlFor="username">Username</label>
+        <input type="text" name="username" />
+        <br />
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" />
+        <br />
+        <button type="submit">Login</button>
+      </form>
     )
   }
   else {
