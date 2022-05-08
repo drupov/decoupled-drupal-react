@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 export const PLAYER = gql`
 query Player ($id: Int!) {
@@ -7,7 +7,7 @@ query Player ($id: Int!) {
     lastName
   }
 }
-`;
+`
 
 export const PLAYERS = gql`
 {
@@ -19,7 +19,7 @@ export const PLAYERS = gql`
     }
   }
 }
-`;
+`
 
 export const CREATE_PLAYER = gql`
 mutation CreatePlayer ($firstName: String!, $lastName: String!) {
@@ -27,4 +27,4 @@ mutation CreatePlayer ($firstName: String!, $lastName: String!) {
     id
   }
 }
-`;
+`
