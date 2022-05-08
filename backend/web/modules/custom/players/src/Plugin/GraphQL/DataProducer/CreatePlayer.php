@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "create_player",
  *   name = @Translation("Create Player"),
  *   description = @Translation("Creates a new player."),
- *   produces = @ContextDefinition("any",
+ *   produces = @ContextDefinition("entity:node",
  *     label = @Translation("Player")
  *   ),
  *   consumes = {
