@@ -1,0 +1,14 @@
+uuid: b263ccdd-cb16-4693-b38c-2a3cd8ac5d53
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.player
+  module:
+    - node
+id: editor
+label: Editor
+weight: -8
+is_admin: null
+permissions:
+  - 'create player content'
