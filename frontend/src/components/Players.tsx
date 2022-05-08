@@ -1,7 +1,7 @@
-import {useContext} from 'react'
+import { useContext } from 'react'
 import PlayerContext from '../context/PlayerContext'
-import {useQuery} from '@apollo/client'
-import {PLAYERS} from '../gql/common'
+import { useQuery } from '@apollo/client'
+import { PLAYERS } from '../gql/common'
 
 const Players: any = () => {
   const context: any = useContext(PlayerContext)

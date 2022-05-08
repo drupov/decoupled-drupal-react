@@ -1,5 +1,5 @@
-import {useMutation} from '@apollo/client'
-import {CREATE_PLAYER, PLAYERS} from '../gql/common'
+import { useMutation } from '@apollo/client'
+import { CREATE_PLAYER, PLAYERS } from '../gql/common'
 
 const CreatePlayer = () => {
   const [createPlayer, {loading}] = useMutation(CREATE_PLAYER)
