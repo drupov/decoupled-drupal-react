@@ -9,7 +9,7 @@ const rootElement = document.getElementById('root')!
 const root = createRoot(rootElement)
 
 const config = {
-  url: 'https://decoupled-drupal-react.lndo.site/'
+  url: process.env.REACT_APP_DRUPAL_URL ?? ''
 }
 
 root.render(

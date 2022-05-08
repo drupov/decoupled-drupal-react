@@ -9,7 +9,7 @@ import Overview from './components/Overview'
 import Player from './components/Player'
 
 const persistedQueriesLink = createPersistedQueryLink({sha256})
-const httpLink = createHttpLink({uri: 'https://decoupled-drupal-react.lndo.site/graphql'})
+const httpLink = createHttpLink({uri: `${process.env.REACT_APP_DRUPAL_URL}graphql`})
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('token')
 
