@@ -4,7 +4,8 @@ import { useApolloClient } from '@apollo/client'
 const Login = () => {
   // Run the 'drupal-react-oauth-provider' hooks.
   const isAuthenticated = useAuthenticated()
-  const [login, {loading, error, data}] = useLazyLogin()
+  // @todo: destructure and handle also "error", see https://github.com/niallmurphy-ie/drupal-react-oauth-provider/issues/2
+  const [login, {loading, data}] = useLazyLogin()
   const [logout] = useLazyLogout()
 
   // Make logout async, so that the store reset can be done only after a successful logout.
@@ -53,8 +54,6 @@ const Login = () => {
       }
 
       {loading && <p>Loading...</p>}
-
-      {error && <p>{error.message}</p>}
 
       {isAuthenticated && (
         <button onClick={() => {
