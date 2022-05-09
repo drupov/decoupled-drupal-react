@@ -6,6 +6,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\graphql\Plugin\GraphQL\DataProducer\DataProducerPluginBase;
 use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -75,7 +76,8 @@ class CreatePlayer extends DataProducerPluginBase implements ContainerFactoryPlu
    * @throws \Exception
    */
   public function resolve(array $data) {
-    if ($this->currentUser->hasPermission('create player content')) {
+    $user = User::load($this->currentUser->id());
+    if ($user->hasPermission('create player content')) {
       $first_name = $data['firstName'];
       $last_name = $data['lastName'];
 
