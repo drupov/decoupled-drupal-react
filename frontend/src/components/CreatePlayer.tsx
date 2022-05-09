@@ -7,7 +7,6 @@ const CreatePlayer = () => {
   return (
     <>
       <h2>Create new player</h2>
-      {loading ? <p>Saving player...</p> : ''}
       <form
         onSubmit={(event: any) => {
           event.preventDefault()
@@ -22,8 +21,10 @@ const CreatePlayer = () => {
           createPlayer({
             variables: {firstName: firstName, lastName: lastName},
             refetchQueries: [{query: PLAYERS}]
-          }).then((res) => {
-            console.log(`Player with id ${res.data.createPlayer.id} added successfully.`)
+          }).then((result) => {
+            console.log(`Player with id ${result.data.createPlayer.id} added successfully.`)
+          }).catch((error) => {
+            console.log(`Error occured: ${error.message}.`)
           })
 
           event.target.firstName.value = ''
@@ -38,6 +39,8 @@ const CreatePlayer = () => {
         <br />
         <button type="submit">Create player</button>
       </form>
+
+      {loading && <p>Saving player...</p>}
     </>
   )
 }
