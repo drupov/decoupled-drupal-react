@@ -7,12 +7,12 @@ const Login = () => {
   const [login, {loading, error, data}] = useLazyLogin()
   const [logout] = useLazyLogout()
 
-  // Make logout async, so that the store clearance can be done only after a successful logout.
+  // Make logout async, so that the store reset can be done only after a successful logout.
   const logoutUser = async () => {
     logout();
   }
 
-  // Get the client, so that the store can be cleared after the logout.
+  // Get the client, so that the store can be resetted after the logout.
   const client = useApolloClient()
 
   // Get oauth data from the environment variables.
@@ -58,7 +58,7 @@ const Login = () => {
 
       {isAuthenticated && (
         <button onClick={() => {
-          logoutUser().then(() => client.clearStore())
+          logoutUser().then(() => client.resetStore())
         }}>Logout</button>
       )}
     </>
