@@ -87,10 +87,10 @@ lando npm install
 
 In `/frontend` copy `.env.local.example` to `.env.local`. Fill in the following values:
 
-* REACT_APP_OAUTH_CLIENT_ID: (the UUID of the consumer)
-* REACT_APP_OAUTH_CLIENT_SECRET: (the secret of the consumer)
-* REACT_APP_OAUTH_GRANT_TYPE: password (the type is `password`)
-* REACT_APP_OAUTH_SCOPE: oauth (this is the machine name of the role, selected as "Scopes" in the consumer)
+* `REACT_APP_OAUTH_CLIENT_ID`: (the UUID of the consumer)
+* `REACT_APP_OAUTH_CLIENT_SECRET`: (the secret of the consumer)
+* `REACT_APP_OAUTH_GRANT_TYPE`: password (the type is `password`)
+* `REACT_APP_OAUTH_SCOPE`: oauth (this is the machine name of the role, selected as "Scopes" in the consumer)
 
 Change the other values in `.env.local` if needed, especially the `REACT_APP_DRUPAL_URL`.
 
