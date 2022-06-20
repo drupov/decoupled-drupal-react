@@ -4,7 +4,6 @@ import { useApolloClient } from '@apollo/client'
 const Login = () => {
   // Run the 'drupal-react-oauth-provider' hooks.
   const isAuthenticated = useAuthenticated()
-  // @todo: destructure and handle also "error", see https://github.com/niallmurphy-ie/drupal-react-oauth-provider/issues/2
   const [login, {loading, error, data}] = useLazyLogin()
   const [logout] = useLazyLogout()
 
